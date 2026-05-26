@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Meu Amor ❤️</title>
+    
+    <!-- Fontes fofas do Google Fonts -->
+    <import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Great+Vibes&display=swap');
+
+    <!-- CSS Integrado -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            font-family: 'Fredoka', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #4a1525;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        /* Estilo do Envelope */
+        .envelope-wrapper {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .envelope-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        .envelope {
+            position: relative;
+            width: 200px;
+            height: 140px;
+            background-color: #ff8fab;
+            margin: 0 auto;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .envelope::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 80px solid #ff5c8a;
+        }
+
+        .heart-seal {
+            font-size: 2.5rem;
+            z-index: 2;
+            animation: pulsar 1.5s infinite;
+        }
+
+        .clique-instrucao {
+            margin-top: 15px;
+            font-weight: 500;
+            color: #ff5c8a;
+        }
+
+        /* Conteúdo da Carta */
+        .conteudo-secreto {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 92, 138, 0.2);
+            max-width: 450px;
+            animation: abrirCartaAnim 0.8s forwards;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .titulo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #ff477e;
+            margin-bottom: 20px;
+        }
+
+        .poema {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Botões interativos */
+        .pergunta-container h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .botoes {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            height: 50px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-family: 'Fredoka', sans-serif;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        #btnSim {
+            background-color: #ff477e;
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 71, 126, 0.3);
+        }
+
+        #btnSim:hover {
+            transform: scale(1.1);
+            background-color: #ff0a54;
+        }
+
+        #btnNao {
+            background-color: #f0f0f0;
+            color: #666;
+            position: absolute;
+        }
+
+        /* Chuva de corações */
+        .heart-fall {
+            position: fixed;
+            top: -10%;
+            font-size: 1.5rem;
+            z-index: 1;
+            pointer-events: none;
+            animation: cair 4s linear forwards;
+        }
+
+        /* Animações */
+        @keyframes pulsar {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes abrirCartaAnim {
+            from { opacity: 0; transform: scale(0.8) translateY(50px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes cair {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Envelope Fechado -->
+        <div class="envelope-wrapper" id="envelopeWrapper" onclick="abrirCarta()">
+            <div class="envelope">
+                <div class="heart-seal">❤️</div>
+            </div>
+            <p class="clique-instrucao">Clique para abrir o seu presente...</p>
+        </div>
+
+        <!-- Conteúdo Secreto (Poema e Interação) -->
+        <div class="conteudo-secreto hidden" id="conteudoSecreto">
+            <h1 class="titulo">Para o meu amor mais lindo... ✨</h1>
+            
+            <div class="poema">
+                <p>No teu abraço eu encontrei meu cais,</p>
+                <p>No teu sorriso, a minha paz reluz.</p>
+                <p>Te amar a cada dia mais e mais,</p>
+                <p>É o caminho que me guia e me conduz.</p>
+                <br>
+                <p>Que o nosso "nós" nunca perca o encanto,</p>
+                <p>E que o tempo seja sempre nosso aliado.</p>
+                <p>Eu te amo tanto, tanto, tanto...</p>
+                <p>Feliz Dia dos Namorados! ❤️</p>
+            </div>
+
+            <!-- Pergunta Interativa -->
+            <div class="pergunta-container">
+                <h2>Aceita continuar sendo o amor da minha vida para sempre?</h2>
+                <div class="botoes">
+                    <button id="btnSim" onclick="celebrar()">SIM! 💖</button>
+                    <button id="btnNao" onmouseover="fugirBotao()" onclick="fugirBotao()">Não 😢</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Integrado -->
+    <script>
+        // Abre a cartinha fofa
+        function abrirCarta() {
+            document.getElementById('envelopeWrapper').classList.add('hidden');
+            document.getElementById('conteudoSecreto').classList.remove('hidden');
+            criarChuvaDeCoracoes(15); // Solta alguns corações logo ao abrir
+        }
+
+        // Faz o botão "Não" fugir do mouse ou do toque
+        function fugirBotao() {
+            const btnNao = document.getElementById('btnNao');
+            
+            // Gera posições aleatórias na tela
+            const larguraJanela = window.innerWidth - 120;
+            const alturaJanela = window.innerHeight - 60;
+            
+            const novoX = Math.random() * (larguraJanela - 20) + 10;
+            const novoY = Math.random() * (alturaJanela - 20) + 10;
+            
+            btnNao.style.position = 'fixed';
+            btnNao.style.left = `${novoX}px`;
+            btnNao.style.top = `${novoY}px`;
+        }
+
+        // Função para criar a chuva fofa de corações
+        function criarChuvaDeCoracoes(quantidade) {
+            const emojis = ['❤️', '💖', '💘', '💕', '✨'];
+            
+            for (let i = 0; i <... quantidade; i++) {
+                const coracao = document.createElement('div');
+                coracao.classList.add('heart-fall');
+                coracao.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                coracao.style.left = Math.random() * 100 + 'vw';
+                coracao.style.animationDuration = Math.random() * 2 + 2 + 's'; 
+                coracao.style.opacity = Math.random();
+                coracao.style.fontSize = Math.random() * 1.5 + 1 + 'rem';
+                
+                document.body.appendChild(coracao);
+                
+                setTimeout(() => {
+                    coracao.remove();
+                }, 4000);
+            }
+        }
+
+        // Quando clica em SIM!
+        function celebrar() {
+            document.querySelector('.pergunta-container h2').innerText = "Ebaaa! Eu te amo muito! Você me faz a pessoa mais feliz do mundo! 💖🥰";
+            document.getElementById('btnNao').style.display = 'none';
+            
+            // Chuva intensa e contínua de corações
+            setInterval(() => {
+                criarChuvaDeCoracoes(5);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
